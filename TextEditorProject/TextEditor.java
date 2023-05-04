@@ -11,9 +11,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 public class TextEditor implements ActionListener{
-    //window frame vaiable
+    //window frame variable
     JFrame frame;
-    //declare menubar
+    //declare menu-bar
     JMenuBar menuBar;
     // declare menus
     JMenu file,edit;
@@ -23,30 +23,30 @@ public class TextEditor implements ActionListener{
     JTextArea textarea;
     //icon
     ImageIcon icon;
-    
+
     TextEditor(){
-        //initalize frame
+        //initialize frame
         frame = new JFrame("TextEditor");
         //set icon
         icon = new ImageIcon("img.png");
         frame.setIconImage(icon.getImage());
         
-        //initalize menubar
+        //initialize menubar
         menuBar = new JMenuBar();
         menuBar.setBackground(Color.lightGray);
         //text area
         textarea = new JTextArea();
         
-        // initalize menus
+        // initialize menus
         file = new JMenu("File");
         edit = new JMenu("Edit");
         
-        // initalize menu items of file menu
+        // initialize menu items of file menu
         open = new JMenuItem("Open File");
         newWindow = new JMenuItem("New Window");
         save = new JMenuItem("Save File");
 
-        // initalize menu items of edit menu
+        // initialize menu items of edit menu
         cut = new JMenuItem("Cut");
         copy = new JMenuItem("Copy");
         paste = new JMenuItem("Paste");
@@ -76,15 +76,15 @@ public class TextEditor implements ActionListener{
         edit.add(selectAll);
         edit.add(close);
 
-        //Adding menus in menubar
+        //Adding menus in menu-bar
         menuBar.add(file);
         menuBar.add(edit);
         
-        //Adding menubar in frame/window 
+        //Adding menu-bar in frame/window
         frame.setJMenuBar(menuBar);
         frame.add(textarea);
         
-        //initalize frame width and height and initial position
+        //initialize frame width and height and initial position
         frame.setVisible(true);
         frame.setBounds(100, 100, 800, 500);
         textarea.setFont(new Font("Arial",Font.PLAIN,20));
@@ -102,7 +102,7 @@ public class TextEditor implements ActionListener{
     public void actionPerformed(ActionEvent actionEventId){
         //performing actions 
         if (actionEventId.getSource()==open) {
-            // create object of filechooser
+            // create object of file-chooser
             JFileChooser fileChooser=new JFileChooser("c:");
             //cancel and open options
             int option = fileChooser.showOpenDialog(null);
@@ -133,7 +133,7 @@ public class TextEditor implements ActionListener{
             new TextEditor();
         }
         if (actionEventId.getSource()==save) {
-            // create object of filechooser
+            // create object of file chooser
             JFileChooser fileChooser=new JFileChooser("c:");
             //cancel and save options
             int option = fileChooser.showSaveDialog(null);
